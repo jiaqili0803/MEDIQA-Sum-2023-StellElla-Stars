@@ -12,7 +12,6 @@ from tqdm import tqdm
 from imblearn.over_sampling import RandomOverSampler
 
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.manifold import TSNE
