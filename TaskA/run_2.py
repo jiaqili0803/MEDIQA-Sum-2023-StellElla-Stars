@@ -13,11 +13,22 @@ from keras.utils.np_utils import to_categorical
 from keras import callbacks
 %matplotlib inline
 
+# read data for command line
+parser = argparse.ArgumentParser(description='Classification task')
+parser.add_argument('--train_csv_file', type=str, required=True, help='Path to the training CSV file')
+parser.add_argument('--valid_csv_file', type=str, required=True, help='Path to the validation CSV file')
+parser.add_argument('--test_csv_file', type=str, required=True, help='Path to the test CSV file')
+parser.add_argument('--output_csv_file', type=str, required=True, help='Path to the output CSV file')
+args = parser.parse_args()
+
+train_data = pd.read_csv(args.train_csv_file)
+valid_data = pd.read_csv(args.valid_csv_file)
+test_data = pd.read_csv(args.test_csv_file)
 
 # read data
-train_data = pd.read_csv('TaskA-TrainingSet.csv')
-valid_data = pd.read_csv('TaskA-ValidationSet.csv')
-test_data = pd.read_csv('taskA_testset4participants_headers_inputConversations.csv')
+#train_data = pd.read_csv('TaskA-TrainingSet.csv')
+#valid_data = pd.read_csv('TaskA-ValidationSet.csv')
+#test_data = pd.read_csv('taskA_testset4participants_headers_inputConversations.csv')
 
 train_X = train_data['dialogue']
 valid_X = valid_data['dialogue']
@@ -125,4 +136,5 @@ test_data['output'] = y_classes
 test_data['SystemOutput'] = test_data['output'].map(num_to_sec)
 test_data.drop('output', axis = 1, inplace = True)
 
-test_data.to_csv('taskA_StellEllaStars_run2_mediqaSum.csv')
+#test_data.to_csv('taskA_StellEllaStars_run2_mediqaSum.csv')
+test_data.to_csv(args.output_csv_file)
