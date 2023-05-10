@@ -12,7 +12,6 @@ from keras.models import Model
 from keras.layers import Embedding, Input, Flatten, concatenate, LSTM, Bidirectional, Conv1D, MaxPooling1D, GlobalMaxPooling1D, GlobalAveragePooling1D, Dropout, SpatialDropout1D, GRU, Dense
 from keras.utils.np_utils import to_categorical
 from keras import callbacks
-%matplotlib inline
 
 # read data for command line
 parser = argparse.ArgumentParser(description='Classification task')
