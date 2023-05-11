@@ -1,4 +1,4 @@
-# MEDIQA-Sum-2023-StellElla-Stars
+# MEDIQA-Sum-2023-StellEllaStars
 
 Hi, you should be able to get quick-started by doing the following commands:
 
